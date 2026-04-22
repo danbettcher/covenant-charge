@@ -149,8 +149,6 @@ export function InterestFormSection() {
                 <option>Church / Congregation</option>
                 <option>School / University</option>
                 <option>Ministry / Nonprofit</option>
-                <option>Synagogue / Jewish Community</option>
-                <option>Mosque / Islamic Center</option>
                 <option>Other Faith Organization</option>
               </FormField>
 
