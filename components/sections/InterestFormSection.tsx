@@ -32,6 +32,8 @@ export function InterestFormSection() {
   const [services, setServices] = useState<string[]>([]);
   const [errors, setErrors] = useState<Errors>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
 
   function set(field: keyof FormData, value: string) {
     setForm((f) => ({ ...f, [field]: value }));
@@ -44,8 +46,9 @@ export function InterestFormSection() {
     );
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setApiError(null);
     const result = schema.safeParse(form);
     if (!result.success) {
       const errs: Errors = {};
@@ -56,8 +59,20 @@ export function InterestFormSection() {
       setErrors(errs);
       return;
     }
-    // UI only — no API call yet
-    setSubmitted(true);
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...result.data, services }),
+      });
+      if (!res.ok) throw new Error("Submission failed");
+      setSubmitted(true);
+    } catch {
+      setApiError("Something went wrong. Please try again or email us directly at info@covenantcharge.com.");
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -234,8 +249,11 @@ export function InterestFormSection() {
                 onChange={(e) => set("message", (e.target as HTMLTextAreaElement).value)}
               />
 
-              <Button type="submit" variant="primary" size="lg" className="w-full justify-center mt-2">
-                Request a Site Assessment
+              {apiError && (
+                <p className="font-sans text-sm text-red-500 text-center">{apiError}</p>
+              )}
+              <Button type="submit" variant="primary" size="lg" className="w-full justify-center mt-2" disabled={submitting}>
+                {submitting ? "Sending…" : "Request a Site Assessment"}
               </Button>
 
               <p className="font-sans text-xs text-covenant-muted text-center">
