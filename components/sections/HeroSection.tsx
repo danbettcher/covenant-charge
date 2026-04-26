@@ -40,7 +40,7 @@ export function HeroSection() {
 
           {/* Micro-copy */}
           <p className="mt-6 font-sans text-sm text-white/40">
-            No upfront cost · No operational burden · Long-term stewardship
+            Flexible ownership · No operational burden · Long-term stewardship
           </p>
         </div>
       </div>

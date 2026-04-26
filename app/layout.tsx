@@ -17,12 +17,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Covenant Charge — Long-Term Energy Revenue for Faith Institutions",
   description:
-    "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage — at no upfront cost, no operational burden, and with full transparency.",
+    "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage — with flexible ownership options, no operational burden, and full transparency.",
   metadataBase: new URL("https://covenantcharge.com"),
   openGraph: {
     title: "Covenant Charge — Long-Term Energy Revenue for Faith Institutions",
     description:
-      "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage — at no upfront cost, no operational burden, and with full transparency.",
+      "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage — with flexible ownership options, no operational burden, and full transparency.",
     url: "https://covenantcharge.com",
     siteName: "Covenant Charge",
     locale: "en_US",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Covenant Charge — Long-Term Energy Revenue for Faith Institutions",
     description:
-      "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage.",
+      "Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging, solar, and battery storage — with flexible ownership options and full transparency.",
   },
 };
 
@@ -47,7 +47,7 @@ export default function RootLayout({
     name: "Covenant Charge",
     url: "https://covenantcharge.com",
     description:
-      "Covenant Charge helps faith institutions generate passive revenue through EV fast charging, solar, and battery storage — at no upfront cost and with full transparency.",
+      "Covenant Charge helps faith institutions generate passive revenue through EV fast charging, solar, and battery storage — with flexible ownership options and full transparency.",
     contactPoint: {
       "@type": "ContactPoint",
       email: "info@covenantcharge.com",

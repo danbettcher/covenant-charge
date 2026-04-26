@@ -213,8 +213,9 @@ export default function BrandPage() {
               </h1>
               <p className="mt-6 font-sans text-lg text-white/75 max-w-xl leading-relaxed">
                 Covenant Charge partners with churches, schools, and ministries to
-                install and manage EV fast chargers on your property — at no cost
-                to you. You receive steady passive income. We handle everything else.
+                install and manage EV fast chargers on your property — with flexible
+                ownership options and no operational burden. You receive steady passive
+                income. We handle everything else.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button variant="primary" size="lg">
@@ -229,7 +230,7 @@ export default function BrandPage() {
                 </Button>
               </div>
               <p className="mt-4 font-sans text-sm text-white/50">
-                No upfront cost · No operational burden · Long-term partnership
+                Flexible ownership · No operational burden · Long-term partnership
               </p>
             </div>
           </div>

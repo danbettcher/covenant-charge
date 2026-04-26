@@ -23,7 +23,7 @@ const faqs = [
   {
     question: "Who owns the equipment?",
     answer:
-      "Covenant Charge owns and operates all equipment. Your institution owns your property. The partnership agreement grants us a license to operate on your site in exchange for your revenue share. You are never on the hook for equipment costs, repairs, or replacements.",
+      "That depends on which path works best for your institution. In our preferred arrangement, your institution purchases and owns the equipment using financing provided through Covenant Charge — you build equity in a long-term asset while we handle all operations. Alternatively, Covenant Charge can fund and own the equipment entirely, with no financial commitment from your institution; you receive a revenue share in exchange for the site license. Either way, Covenant Charge manages all installation, maintenance, and operations for the life of the agreement.",
   },
   {
     question: "How do you handle electricity costs?",

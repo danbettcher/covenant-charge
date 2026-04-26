@@ -6,7 +6,23 @@
 - **Name:** Covenant Charge
 - **Domain:** covenantcharge.com
 - **Tagline:** EV Fast Charging for Faith Institutions
-- **One-liner:** Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging — at no cost and with full transparency.
+- **One-liner:** Covenant Charge helps churches, schools, and ministries generate passive revenue through EV fast charging — with flexible ownership options and full transparency.
+
+## Business Model
+
+Two ownership paths are available. Always present both as options. The **institution-owned model is preferred by Covenant Charge**.
+
+### Option A — Institution-Owned + CC-Financed (preferred)
+The institution purchases the equipment through Covenant Charge using CC's financing. CC handles all permitting, installation, utility interconnection, and ongoing operations for the life of the agreement. The institution owns the asset, builds equity, and revenue from charging offsets or covers the financing payments. CC prefers this model because it aligns long-term interests and does not require CC to hold assets on its balance sheet.
+
+### Option B — CC-Funded, Zero Upfront Cost (alternative)
+CC funds and owns the equipment. The institution makes no financial commitment. The institution receives a revenue share in exchange for the site license. This option is available for institutions that cannot or prefer not to finance. It is a legitimate offering but not the default.
+
+**When writing copy:**
+- Never present zero-upfront-cost as the only available model or as the default
+- Never state "Covenant Charge owns all equipment" as a universal fact — ownership depends on which option the institution chooses
+- Lead with flexibility: institutions can own the equipment and finance through CC, or have CC fund it entirely
+- The preferred framing emphasizes institution ownership and stewardship of a long-term asset
 
 ## Brand Voice & Tone
 - **Trustworthy** — we are a steward, not a vendor. Language should feel like a long-term partner, not a sales pitch.
@@ -19,6 +35,8 @@
 - Speculative revenue claims presented as fact — always say "projected" or "estimated"
 - Exclusivity or ideological framing — this is about transparency and choice, not ideology
 - Corporate buzzwords that erode trust (e.g., "synergy", "leverage", "disrupt")
+- Presenting "zero upfront cost" or "no cost" as the default or only model — it is one option
+- Stating "Covenant Charge owns all equipment" as a universal fact — ownership varies by agreement
 
 ## Color Palette
 | Name           | Hex       | Usage                                              |
