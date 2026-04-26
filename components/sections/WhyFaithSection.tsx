@@ -3,7 +3,7 @@ import { SectionWrapper } from "@/components/ui/SectionWrapper";
 const callouts = [
   {
     title: "Long-Term Property Ownership",
-    body: "Energy infrastructure is a 15–30 year investment. Faith institutions own their properties for generations — making them the most stable and sought-after sites in the market.",
+    body: "Energy infrastructure is a 15–30 year investment. Faith institutions own their properties for generations, making them the most stable and sought-after sites in the market.",
   },
   {
     title: "Community Trust",
@@ -11,7 +11,7 @@ const callouts = [
   },
   {
     title: "Mission Alignment",
-    body: "Revenue generated here supports your institution's work — facilities, programs, outreach. Drivers who share your values can choose to charge where it matters.",
+    body: "Revenue generated here supports your institution's work: facilities, programs, and outreach. Drivers who share your values can choose to charge where it matters.",
   },
 ];
 
@@ -28,10 +28,10 @@ export function WhyFaithSection() {
             Faith Institutions Are Uniquely Positioned for This
           </h2>
           <p className="mt-6 font-sans text-lg text-white/70 leading-relaxed">
-            The transition to clean energy is creating long-term infrastructure opportunities tied to land, access, and community stability. Faith-based institutions have all three — yet many are unable or unwilling to pursue these programs on their own due to governance complexity or uncertainty about long-term obligations.
+            The transition to clean energy is creating long-term infrastructure opportunities tied to land, access, and community stability. Faith-based institutions have all three, yet many are unable or unwilling to pursue these programs on their own due to governance complexity or uncertainty about long-term obligations.
           </p>
           <p className="mt-4 font-sans text-lg text-white/70 leading-relaxed">
-            This is exactly the gap Covenant Charge exists to fill. We act as a long-term steward — not a vendor — so your institution can participate responsibly without distraction from its mission.
+            This is exactly the gap Covenant Charge exists to fill. We act as a long-term steward, not a vendor, so your institution can participate responsibly without distraction from its mission.
           </p>
         </div>
 

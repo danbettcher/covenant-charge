@@ -37,7 +37,7 @@ const benefits = [
   {
     icon: <DollarIcon />,
     title: "Monthly Revenue",
-    description: "A transparent revenue share paid directly to your institution. No management fees hidden in fine print — what you earn is what you receive.",
+    description: "A transparent revenue share paid directly to your institution. No management fees hidden in fine print. What you earn is what you receive.",
   },
   {
     icon: <ShieldIcon />,
@@ -47,7 +47,7 @@ const benefits = [
   {
     icon: <EyeIcon />,
     title: "Full Transparency",
-    description: "Monthly performance reports show energy generated, sessions served, system uptime, and a complete revenue breakdown — across every service you participate in.",
+    description: "Monthly performance reports show energy generated, sessions served, system uptime, and a complete revenue breakdown across every service you participate in.",
   },
   {
     icon: <ClockIcon />,

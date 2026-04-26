@@ -7,7 +7,7 @@ const pillars = [
   },
   {
     title: "Full Transparency",
-    body: "Every dollar tracked. Every report delivered on time. You will never wonder what is happening with your systems — the data is yours, the revenue is yours, and the relationship is built on openness.",
+    body: "Every dollar tracked. Every report delivered on time. You will never wonder what is happening with your systems. The data is yours, the revenue is yours, and the relationship is built on openness.",
   },
   {
     title: "Steward, Not Operator",

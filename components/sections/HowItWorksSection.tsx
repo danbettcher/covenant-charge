@@ -6,7 +6,7 @@ const steps = [
     number: "01",
     title: "We Assess Your Site",
     description:
-      "We evaluate your property for grid capacity, solar exposure, battery storage potential, and charger placement. No cost, no commitment — just a clear picture of what your site can support.",
+      "We evaluate your property for grid capacity, solar exposure, battery storage potential, and charger placement. No cost, no commitment. Just a clear picture of what your site can support.",
   },
   {
     number: "02",
@@ -18,7 +18,7 @@ const steps = [
     number: "03",
     title: "You Receive Revenue",
     description:
-      "Each month, you receive a transparent performance report and direct deposit. You will always know exactly how your systems performed and what your institution earned — and why.",
+      "Each month, you receive a transparent performance report and direct deposit. You will always know exactly how your systems performed, what your institution earned, and why.",
   },
 ];
 

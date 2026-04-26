@@ -24,7 +24,7 @@ const SERVICES = [
   { id: "ev", label: "EV Fast Charging" },
   { id: "bess", label: "Battery Storage (BESS)" },
   { id: "solar", label: "Solar (PV)" },
-  { id: "unsure", label: "Not Sure — Help Me Decide" },
+  { id: "unsure", label: "Not Sure / Help Me Decide" },
 ];
 
 export function InterestFormSection() {
@@ -110,10 +110,10 @@ export function InterestFormSection() {
             </p>
             <ul className="mt-8 flex flex-col gap-3">
               {[
-                "Free site assessment — no commitment required",
+                "Free site assessment, no commitment required",
                 "Preliminary revenue projection within 2 weeks",
                 "We evaluate EV, solar, and storage potential together",
-                "No pressure, no jargon — just a clear picture of what is possible",
+                "No pressure, no jargon. Just a clear picture of what is possible.",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 font-sans text-sm text-white/70">
                   <span className="text-covenant-green mt-0.5 shrink-0">✓</span>

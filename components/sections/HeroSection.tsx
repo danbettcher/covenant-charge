@@ -20,7 +20,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p className="mt-6 font-sans text-xl text-white/75 leading-relaxed max-w-2xl">
-            Covenant Charge helps churches, schools, and ministries unlock sustainable income from EV charging, solar, and battery storage — with zero operational burden and full transparency.
+            Covenant Charge helps churches, schools, and ministries unlock sustainable income from EV charging, solar, and battery storage. Zero operational burden. Full transparency.
           </p>
 
           {/* CTAs */}

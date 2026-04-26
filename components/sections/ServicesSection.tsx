@@ -39,7 +39,7 @@ const services = [
     icon: <EvIcon />,
     title: "EV Fast Charging",
     description:
-      "DC fast chargers installed on your parking lot, generating revenue from every session. We manage the equipment, network, customer support, and maintenance — permanently.",
+      "DC fast chargers installed on your parking lot, generating revenue from every session. We manage the equipment, network, customer support, and maintenance. Permanently.",
     highlights: [
       "Revenue from every charging session",
       "Equipment and network fully managed",
@@ -61,7 +61,7 @@ const services = [
     icon: <SolarIcon />,
     title: "Solar (PV)",
     description:
-      "Rooftop or ground-mount photovoltaic systems that reduce your energy costs and can power your EV chargers directly — increasing your net revenue per session.",
+      "Rooftop or ground-mount photovoltaic systems that reduce your energy costs and can power your EV chargers directly, increasing your net revenue per session.",
     highlights: [
       "Reduces your institution's electricity costs",
       "Powers EV chargers to increase net revenue",
@@ -81,7 +81,7 @@ export function ServicesSection() {
           Our Services
         </h2>
         <p className="mt-4 font-sans text-lg text-covenant-muted max-w-2xl mx-auto">
-          We design what makes sense for your site — a single service or a fully integrated energy program.
+          We design what makes sense for your site: a single service or a fully integrated energy program.
         </p>
       </div>
 

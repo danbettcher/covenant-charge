@@ -22,7 +22,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-4">
             <LogoMark variant="white" size="sm" />
             <p className="font-sans text-sm text-white/60 leading-relaxed max-w-xs">
-              Long-term energy revenue for faith institutions. EV charging, battery storage, and solar — fully managed, fully transparent.
+              Long-term energy revenue for faith institutions. EV charging, battery storage, and solar. Fully managed. Fully transparent.
             </p>
           </div>
 

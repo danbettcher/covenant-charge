@@ -37,6 +37,7 @@ CC funds and owns the equipment. The institution makes no financial commitment. 
 - Corporate buzzwords that erode trust (e.g., "synergy", "leverage", "disrupt")
 - Presenting "zero upfront cost" or "no cost" as the default or only model — it is one option
 - Stating "Covenant Charge owns all equipment" as a universal fact — ownership varies by agreement
+- Em-dashes (—) in marketing copy. They are a strong signal of AI-generated text. Use periods, commas, or rewrite the sentence instead. A sentence that needs an em-dash usually needs to be two sentences.
 
 ## Color Palette
 | Name           | Hex       | Usage                                              |

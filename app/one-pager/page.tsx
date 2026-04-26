@@ -4,14 +4,14 @@ import { LogoMark } from "@/components/ui/LogoMark";
 export const metadata: Metadata = {
   title: "Covenant Charge — One-Pager",
   description:
-    "Generate passive revenue from your parking lot. Covenant Charge installs and operates EV fast charging for faith institutions — institution-owned or CC-funded, with full transparency.",
+    "Generate passive revenue from your parking lot. Covenant Charge installs and operates EV fast charging for faith institutions. Institution-owned or CC-funded, with full transparency.",
 };
 
 const steps = [
   {
     num: "01",
     title: "We Assess Your Site",
-    body: "We evaluate grid capacity, solar exposure, battery potential, and charger placement — free, no obligation.",
+    body: "We evaluate grid capacity, solar exposure, battery potential, and charger placement. Free, no obligation.",
   },
   {
     num: "02",
@@ -32,7 +32,7 @@ const differentiators = [
   },
   {
     title: "Full Transparency",
-    body: "Monthly reports with every metric — no hidden fees, no opaque billing, no surprises.",
+    body: "Monthly reports with every metric. No hidden fees, no opaque billing, no surprises.",
   },
   {
     title: "Long-Term Partnership",
@@ -53,15 +53,15 @@ const stats = [
 const questions = [
   {
     q: "What if our parking lot is small?",
-    a: "We assess sites of all sizes. Even a modest lot can generate meaningful revenue — we'll tell you honestly whether yours is a strong candidate.",
+    a: "We assess sites of all sizes. Even a modest lot can generate meaningful revenue. We'll tell you honestly whether yours is a strong candidate.",
   },
   {
     q: "What happens if something breaks?",
-    a: "CC handles all maintenance and operations for the life of the agreement — regardless of which ownership path you choose.",
+    a: "CC handles all maintenance and operations for the life of the agreement, regardless of which ownership path you choose.",
   },
   {
     q: "Are we locked in?",
-    a: "Agreements include fair exit provisions. We believe a partnership only works when both parties benefit — our contracts are written that way.",
+    a: "Agreements include fair exit provisions. We believe a partnership only works when both parties benefit. Our contracts are written that way.",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function OnePager() {
               The Challenge
             </h2>
             <p className="font-sans text-sm text-covenant-dark leading-relaxed print:leading-snug">
-              Faith institutions own valuable real estate — parking lots that sit underutilized
+              Faith institutions own valuable real estate: parking lots that sit underutilized
               most of the week. EV adoption is accelerating, financial pressures are real,
               and there&apos;s no clear path to new non-dues revenue without taking on capital risk.
             </p>
@@ -135,7 +135,7 @@ export default function OnePager() {
             </h2>
             <p className="font-sans text-sm text-white leading-relaxed print:leading-snug">
               Covenant Charge turns your property into a long-term revenue stream. Own the
-              equipment through CC financing and build equity — or have CC fund it entirely
+              equipment through CC financing and build equity, or have CC fund it entirely
               at no cost to you. Either way, CC handles everything and you receive a monthly
               payment and transparent report.
             </p>
@@ -234,7 +234,7 @@ export default function OnePager() {
             </h2>
             <p className="font-sans text-white/80 text-sm mb-5 print:hidden max-w-sm mx-auto">
               No obligation. No cost. We&apos;ll tell you honestly whether your site is a strong candidate
-              — usually within two business days.
+              Usually within two business days.
             </p>
             <a
               href="/#interest-form"
