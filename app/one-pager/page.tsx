@@ -57,7 +57,7 @@ const questions = [
   },
   {
     q: "What happens if something breaks?",
-    a: "It depends on which path you choose. Your institution can own the equipment through CC financing — building equity in a long-term asset — or CC can fund and own the equipment with no financial commitment from you. Either way, CC handles all maintenance and operations.",
+    a: "CC handles all maintenance and operations for the life of the agreement — regardless of which ownership path you choose.",
   },
   {
     q: "Are we locked in?",
@@ -78,7 +78,7 @@ export default function OnePager() {
       <div className="max-w-4xl mx-auto px-8 py-12 print:py-0 print:px-0">
 
         {/* ── HEADER ── */}
-        <header className="flex items-center justify-between border-b border-covenant-blue/20 pb-6 mb-10 print:mb-5">
+        <header className="flex items-center justify-between border-b border-covenant-blue/20 pb-6 mb-10 print:mb-3">
           <LogoMark size="md" showWordmark />
           <div className="text-right">
             <p className="font-sans text-xs tracking-widest uppercase text-covenant-muted">
@@ -89,25 +89,24 @@ export default function OnePager() {
         </header>
 
         {/* ── HEADLINE ── */}
-        <section className="mb-10 print:mb-5">
-          {/* Outcome-focused headline: "Achieve X without Y" — copy-frameworks.md */}
-          <h1 className="font-serif font-bold text-4xl text-covenant-blue leading-tight mb-4">
+        <section className="mb-10 print:mb-3">
+          <h1 className="font-serif font-bold text-4xl print:text-2xl text-covenant-blue leading-tight print:leading-snug mb-4 print:mb-2">
             Generate Passive Revenue from Your Parking Lot —<br />
             With Flexible Ownership and Full Transparency
           </h1>
-          <p className="font-sans text-lg text-covenant-dark/80 leading-relaxed max-w-2xl">
+          <p className="font-sans text-lg print:text-sm text-covenant-dark/80 leading-relaxed print:leading-snug max-w-2xl">
             Covenant Charge installs, operates, and maintains EV fast charging on faith institution
             campuses. You receive a monthly direct deposit and a clear report. We handle everything else.
           </p>
         </section>
 
         {/* ── PROBLEM / SOLUTION (2-col) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-6 mb-10 print:mb-5 break-inside-avoid">
-          <div className="bg-covenant-cream rounded-xl p-6">
-            <h2 className="font-serif font-bold text-xs uppercase tracking-widest text-covenant-muted mb-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-6 mb-10 print:mb-3 break-inside-avoid">
+          <div className="bg-covenant-cream rounded-xl p-6 print:p-3">
+            <h2 className="font-serif font-bold text-xs uppercase tracking-widest text-covenant-muted mb-3 print:mb-1">
               The Challenge
             </h2>
-            <p className="font-sans text-sm text-covenant-dark leading-relaxed">
+            <p className="font-sans text-sm text-covenant-dark leading-relaxed print:leading-snug">
               Faith institutions own valuable real estate — parking lots that sit underutilized most
               of the week. Meanwhile, EV adoption is accelerating rapidly, community members and
               visitors need reliable charging, and institutions face ongoing financial pressure
@@ -115,11 +114,11 @@ export default function OnePager() {
             </p>
           </div>
 
-          <div className="bg-covenant-blue rounded-xl p-6">
-            <h2 className="font-serif font-bold text-xs uppercase tracking-widest text-white/50 mb-3">
+          <div className="bg-covenant-blue rounded-xl p-6 print:p-3">
+            <h2 className="font-serif font-bold text-xs uppercase tracking-widest text-white/50 mb-3 print:mb-1">
               The Solution
             </h2>
-            <p className="font-sans text-sm text-white leading-relaxed">
+            <p className="font-sans text-sm text-white leading-relaxed print:leading-snug">
               Covenant Charge turns your existing property into a long-term revenue stream. Two paths
               are available: your institution can own the equipment through CC financing and build
               equity in the asset, or CC can fund and own the equipment entirely with no financial
@@ -130,31 +129,31 @@ export default function OnePager() {
         </div>
 
         {/* ── HOW IT WORKS ── */}
-        <section className="mb-10 print:mb-5 break-inside-avoid">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6 print:mb-3">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6 print:gap-4">
+        <section className="mb-10 print:mb-3 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl print:text-sm text-covenant-blue mb-6 print:mb-2">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6 print:gap-3">
             {steps.map((step) => (
               <div key={step.num}>
-                <div className="font-serif font-bold text-3xl text-covenant-gold mb-2">{step.num}</div>
-                <h3 className="font-serif font-bold text-base text-covenant-dark mb-1">{step.title}</h3>
-                <p className="font-sans text-sm text-covenant-muted leading-relaxed">{step.body}</p>
+                <div className="font-serif font-bold text-3xl print:text-lg text-covenant-gold mb-2 print:mb-1">{step.num}</div>
+                <h3 className="font-serif font-bold text-base print:text-xs text-covenant-dark mb-1">{step.title}</h3>
+                <p className="font-sans text-sm print:text-xs text-covenant-muted leading-relaxed print:leading-snug">{step.body}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── WHY COVENANT CHARGE ── */}
-        <section className="mb-10 print:mb-5 break-inside-avoid">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6 print:mb-3">
+        <section className="mb-10 print:mb-3 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl print:text-sm text-covenant-blue mb-6 print:mb-2">
             Why Faith Institutions Choose Covenant Charge
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-5 print:gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-5 print:gap-2">
             {differentiators.map((item) => (
-              <div key={item.title} className="flex gap-3">
+              <div key={item.title} className="flex gap-3 print:gap-2">
                 <div className="w-1 min-h-full rounded-full bg-covenant-green flex-shrink-0" />
                 <div>
-                  <p className="font-sans font-semibold text-sm text-covenant-dark">{item.title}</p>
-                  <p className="font-sans text-sm text-covenant-muted leading-relaxed mt-0.5">
+                  <p className="font-sans font-semibold text-sm print:text-xs text-covenant-dark">{item.title}</p>
+                  <p className="font-sans text-sm print:text-xs text-covenant-muted leading-relaxed print:leading-snug mt-0.5">
                     {item.body}
                   </p>
                 </div>
@@ -164,11 +163,11 @@ export default function OnePager() {
         </section>
 
         {/* ── STATS BAR ── */}
-        <section className="bg-covenant-navy rounded-xl px-8 py-6 mb-10 print:mb-5 print:py-4 break-inside-avoid">
+        <section className="bg-covenant-navy rounded-xl px-8 py-6 mb-10 print:mb-3 print:py-3 print:px-4 break-inside-avoid">
           <div className="grid grid-cols-3 gap-6 text-center">
             {stats.map((item) => (
               <div key={item.label}>
-                <div className="font-serif font-bold text-3xl text-covenant-gold">{item.value}</div>
+                <div className="font-serif font-bold text-3xl print:text-xl text-covenant-gold">{item.value}</div>
                 <div className="font-sans text-xs text-white/60 mt-1 leading-snug">{item.label}</div>
               </div>
             ))}
@@ -176,15 +175,15 @@ export default function OnePager() {
         </section>
 
         {/* ── COMMON QUESTIONS ── */}
-        <section className="mb-10 print:mb-5 break-inside-avoid">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-5 print:mb-3">Common Questions</h2>
-          <div className="space-y-4">
+        <section className="mb-10 print:mb-3 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl print:text-sm text-covenant-blue mb-5 print:mb-2">Common Questions</h2>
+          <div className="space-y-4 print:space-y-2">
             {questions.map((item) => (
-              <div key={item.q} className="flex gap-3 text-sm">
+              <div key={item.q} className="flex gap-3 print:gap-2 text-sm print:text-xs">
                 <span className="font-sans font-bold text-covenant-green flex-shrink-0 mt-0.5">Q.</span>
                 <div>
                   <p className="font-sans font-semibold text-covenant-dark">{item.q}</p>
-                  <p className="font-sans text-covenant-muted leading-relaxed mt-0.5">{item.a}</p>
+                  <p className="font-sans text-covenant-muted leading-relaxed print:leading-snug mt-0.5">{item.a}</p>
                 </div>
               </div>
             ))}
@@ -192,8 +191,8 @@ export default function OnePager() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="bg-covenant-green rounded-xl p-8 print:p-5 mb-8 print:mb-4 text-center break-inside-avoid">
-          <h2 className="font-serif font-bold text-2xl text-white mb-2">
+        <section className="bg-covenant-green rounded-xl p-8 print:p-4 mb-8 print:mb-3 text-center break-inside-avoid">
+          <h2 className="font-serif font-bold text-2xl print:text-lg text-white mb-2">
             Request a Free Site Assessment
           </h2>
           <p className="font-sans text-white/80 text-sm mb-5 print:mb-3 max-w-md mx-auto">
