@@ -68,10 +68,17 @@ const questions = [
 export default function OnePager() {
   return (
     <div className="min-h-screen bg-covenant-light font-sans print:bg-white">
-      <div className="max-w-4xl mx-auto px-8 py-12 print:py-6 print:px-10">
+      {/* Force backgrounds and colors to print */}
+      <style>{`
+        @media print {
+          * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+          @page { margin: 0.5in; size: letter portrait; }
+        }
+      `}</style>
+      <div className="max-w-4xl mx-auto px-8 py-12 print:py-0 print:px-0">
 
         {/* ── HEADER ── */}
-        <header className="flex items-center justify-between border-b border-covenant-blue/20 pb-6 mb-10">
+        <header className="flex items-center justify-between border-b border-covenant-blue/20 pb-6 mb-10 print:mb-5">
           <LogoMark size="md" showWordmark />
           <div className="text-right">
             <p className="font-sans text-xs tracking-widest uppercase text-covenant-muted">
@@ -82,11 +89,11 @@ export default function OnePager() {
         </header>
 
         {/* ── HEADLINE ── */}
-        <section className="mb-10">
+        <section className="mb-10 print:mb-5">
           {/* Outcome-focused headline: "Achieve X without Y" — copy-frameworks.md */}
           <h1 className="font-serif font-bold text-4xl text-covenant-blue leading-tight mb-4">
             Generate Passive Revenue from Your Parking Lot —<br />
-            At No Cost and With Full Transparency
+            With Flexible Ownership and Full Transparency
           </h1>
           <p className="font-sans text-lg text-covenant-dark/80 leading-relaxed max-w-2xl">
             Covenant Charge installs, operates, and maintains EV fast charging on faith institution
@@ -95,7 +102,7 @@ export default function OnePager() {
         </section>
 
         {/* ── PROBLEM / SOLUTION (2-col) ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-6 mb-10 print:mb-5 break-inside-avoid">
           <div className="bg-covenant-cream rounded-xl p-6">
             <h2 className="font-serif font-bold text-xs uppercase tracking-widest text-covenant-muted mb-3">
               The Challenge
@@ -123,9 +130,9 @@ export default function OnePager() {
         </div>
 
         {/* ── HOW IT WORKS ── */}
-        <section className="mb-10">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6">How It Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="mb-10 print:mb-5 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6 print:mb-3">How It Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 print:grid-cols-3 gap-6 print:gap-4">
             {steps.map((step) => (
               <div key={step.num}>
                 <div className="font-serif font-bold text-3xl text-covenant-gold mb-2">{step.num}</div>
@@ -137,11 +144,11 @@ export default function OnePager() {
         </section>
 
         {/* ── WHY COVENANT CHARGE ── */}
-        <section className="mb-10">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6">
+        <section className="mb-10 print:mb-5 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-6 print:mb-3">
             Why Faith Institutions Choose Covenant Charge
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-5 print:gap-3">
             {differentiators.map((item) => (
               <div key={item.title} className="flex gap-3">
                 <div className="w-1 min-h-full rounded-full bg-covenant-green flex-shrink-0" />
@@ -157,7 +164,7 @@ export default function OnePager() {
         </section>
 
         {/* ── STATS BAR ── */}
-        <section className="bg-covenant-navy rounded-xl px-8 py-6 mb-10">
+        <section className="bg-covenant-navy rounded-xl px-8 py-6 mb-10 print:mb-5 print:py-4 break-inside-avoid">
           <div className="grid grid-cols-3 gap-6 text-center">
             {stats.map((item) => (
               <div key={item.label}>
@@ -169,8 +176,8 @@ export default function OnePager() {
         </section>
 
         {/* ── COMMON QUESTIONS ── */}
-        <section className="mb-10">
-          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-5">Common Questions</h2>
+        <section className="mb-10 print:mb-5 break-inside-avoid">
+          <h2 className="font-serif font-bold text-xl text-covenant-blue mb-5 print:mb-3">Common Questions</h2>
           <div className="space-y-4">
             {questions.map((item) => (
               <div key={item.q} className="flex gap-3 text-sm">
@@ -185,24 +192,29 @@ export default function OnePager() {
         </section>
 
         {/* ── CTA ── */}
-        <section className="bg-covenant-green rounded-xl p-8 mb-8 text-center">
+        <section className="bg-covenant-green rounded-xl p-8 print:p-5 mb-8 print:mb-4 text-center break-inside-avoid">
           <h2 className="font-serif font-bold text-2xl text-white mb-2">
             Request a Free Site Assessment
           </h2>
-          <p className="font-sans text-white/80 text-sm mb-5 max-w-md mx-auto">
+          <p className="font-sans text-white/80 text-sm mb-5 print:mb-3 max-w-md mx-auto">
             No obligation. No cost. We&apos;ll evaluate your site and tell you honestly whether it&apos;s
             a strong candidate — usually within two business days.
           </p>
+          {/* Screen: clickable button */}
           <a
             href="/#interest-form"
-            className="inline-block bg-white text-covenant-green font-sans font-semibold text-sm px-8 py-3 rounded-lg hover:bg-covenant-cream transition-colors"
+            className="print:hidden inline-block bg-white text-covenant-green font-sans font-semibold text-sm px-8 py-3 rounded-lg hover:bg-covenant-cream transition-colors"
           >
             Get Started at covenantcharge.com
           </a>
+          {/* Print: plain URL */}
+          <p className="hidden print:block font-sans font-semibold text-white text-base">
+            covenantcharge.com
+          </p>
         </section>
 
         {/* ── FOOTER ── */}
-        <footer className="border-t border-covenant-blue/20 pt-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+        <footer className="border-t border-covenant-blue/20 pt-5 print:pt-3 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
           <p className="font-sans text-xs text-covenant-muted">
             © 2025 Covenant Charge &nbsp;·&nbsp; covenantcharge.com &nbsp;·&nbsp; info@covenantcharge.com
           </p>
