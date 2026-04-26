@@ -174,8 +174,8 @@ export default function OnePager() {
           </div>
         </section>
 
-        {/* ── COMMON QUESTIONS ── */}
-        <section className="mb-10 print:mb-3 break-inside-avoid">
+        {/* ── COMMON QUESTIONS — hidden on print, too verbose for one page ── */}
+        <section className="mb-10 print:hidden">
           <h2 className="font-serif font-bold text-xl print:text-sm text-covenant-blue mb-5 print:mb-2">Common Questions</h2>
           <div className="space-y-4 print:space-y-2">
             {questions.map((item) => (
@@ -195,7 +195,7 @@ export default function OnePager() {
           <h2 className="font-serif font-bold text-2xl print:text-lg text-white mb-2">
             Request a Free Site Assessment
           </h2>
-          <p className="font-sans text-white/80 text-sm mb-5 print:mb-3 max-w-md mx-auto">
+          <p className="font-sans text-white/80 text-sm mb-5 print:hidden max-w-md mx-auto">
             No obligation. No cost. We&apos;ll evaluate your site and tell you honestly whether it&apos;s
             a strong candidate — usually within two business days.
           </p>
