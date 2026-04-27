@@ -237,7 +237,7 @@ export default function OnePager() {
               Usually within two business days.
             </p>
             <a
-              href="/#interest-form"
+              href="/qualify"
               className="print:hidden inline-block bg-white text-covenant-green font-sans font-semibold text-sm px-8 py-3 rounded-lg shadow-sm hover:bg-covenant-cream transition-colors"
             >
               Get Started at covenantcharge.com
