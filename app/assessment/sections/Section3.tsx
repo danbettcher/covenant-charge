@@ -21,6 +21,119 @@ export function Section3({ data, onChange }: SectionProps) {
         description="This section applies because you selected EV charging."
       />
 
+      {/* Charger quantity intent */}
+      <div className="flex flex-col gap-2">
+        <p className="font-sans text-sm font-medium text-covenant-dark">
+          How many charging stations are you looking to install?
+        </p>
+        <div className="flex flex-col gap-2">
+
+          {/* Option A */}
+          <label className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition-colors ${
+            data.sec_3_12.intent === 'exact'
+              ? 'border-covenant-blue bg-covenant-blue/5'
+              : 'border-slate-200 hover:border-slate-300'
+          }`}>
+            <input
+              type="radio"
+              name="sec_3_12_intent"
+              value="exact"
+              checked={data.sec_3_12.intent === 'exact'}
+              onChange={() => onChange('sec_3_12', { ...data.sec_3_12, intent: 'exact' })}
+              className="mt-0.5 accent-covenant-blue flex-shrink-0"
+            />
+            <span className="font-sans text-sm text-covenant-dark leading-snug">We know exactly what we want</span>
+          </label>
+          {data.sec_3_12.intent === 'exact' && (
+            <div className="ml-8 grid grid-cols-1 sm:grid-cols-2 gap-3 pb-1">
+              <FormField
+                label="Number of charging stations"
+                type="number"
+                min="0"
+                value={data.sec_3_12.stations}
+                onChange={e => onChange('sec_3_12', { ...data.sec_3_12, stations: e.target.value })}
+                placeholder="e.g., 4"
+              />
+              <FormField
+                label="Number of parking spaces to electrify"
+                type="number"
+                min="0"
+                value={data.sec_3_12.spaces}
+                onChange={e => onChange('sec_3_12', { ...data.sec_3_12, spaces: e.target.value })}
+                placeholder="e.g., 8"
+              />
+            </div>
+          )}
+
+          {/* Option B */}
+          <label className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition-colors ${
+            data.sec_3_12.intent === 'open'
+              ? 'border-covenant-blue bg-covenant-blue/5'
+              : 'border-slate-200 hover:border-slate-300'
+          }`}>
+            <input
+              type="radio"
+              name="sec_3_12_intent"
+              value="open"
+              checked={data.sec_3_12.intent === 'open'}
+              onChange={() => onChange('sec_3_12', { ...data.sec_3_12, intent: 'open' })}
+              className="mt-0.5 accent-covenant-blue flex-shrink-0"
+            />
+            <span className="font-sans text-sm text-covenant-dark leading-snug">We have an idea but we&rsquo;re open to recommendations</span>
+          </label>
+          {data.sec_3_12.intent === 'open' && (
+            <div className="ml-8 space-y-3 pb-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <FormField
+                  label="Number of charging stations"
+                  type="number"
+                  min="0"
+                  value={data.sec_3_12.stations}
+                  onChange={e => onChange('sec_3_12', { ...data.sec_3_12, stations: e.target.value })}
+                  placeholder="e.g., 4"
+                />
+                <FormField
+                  label="Number of parking spaces to electrify"
+                  type="number"
+                  min="0"
+                  value={data.sec_3_12.spaces}
+                  onChange={e => onChange('sec_3_12', { ...data.sec_3_12, spaces: e.target.value })}
+                  placeholder="e.g., 8"
+                />
+              </div>
+              <p className="font-sans text-xs text-covenant-muted bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
+                Covenant Charge will review your inputs and may suggest adjustments based on your site profile.
+              </p>
+            </div>
+          )}
+
+          {/* Option C */}
+          <label className={`flex items-start gap-3 p-3 rounded-xl border-2 cursor-pointer transition-colors ${
+            data.sec_3_12.intent === 'none'
+              ? 'border-covenant-blue bg-covenant-blue/5'
+              : 'border-slate-200 hover:border-slate-300'
+          }`}>
+            <input
+              type="radio"
+              name="sec_3_12_intent"
+              value="none"
+              checked={data.sec_3_12.intent === 'none'}
+              onChange={() => onChange('sec_3_12', { ...data.sec_3_12, intent: 'none' })}
+              className="mt-0.5 accent-covenant-blue flex-shrink-0"
+            />
+            <span className="font-sans text-sm text-covenant-dark leading-snug">We have no idea — we need a recommendation</span>
+          </label>
+          {data.sec_3_12.intent === 'none' && (
+            <div className="ml-8 pb-1">
+              <p className="font-sans text-sm text-covenant-green bg-covenant-green/5 border border-covenant-green/20 rounded-lg px-3 py-2">
+                No problem. We&rsquo;ll assess your site and come back to you with configuration options that make sense for your property.
+              </p>
+            </div>
+          )}
+
+        </div>
+      </div>
+
       <div className="sm:w-1/2">
         <FormField
           label="Estimated total paved parking spaces"

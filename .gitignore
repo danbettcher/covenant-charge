@@ -43,5 +43,8 @@ next-env.d.ts
 # External tools & Claude internals
 marketingskills/
 .claude/
+.mcp.json
 
 ai-graphic-design-skill/
+
+.vercel

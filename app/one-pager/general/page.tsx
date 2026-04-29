@@ -4,7 +4,7 @@ import { LogoMark } from "@/components/ui/LogoMark";
 export const metadata: Metadata = {
   title: "Covenant Charge — One-Pager",
   description:
-    "Covenant Charge guides faith institutions through every stage of an EV charging program — site evaluation, operator selection, permitting, and long-term oversight. Expert guidance, full transparency.",
+    "Covenant Charge guides property owners through every stage of an EV charging program — site evaluation, operator selection, permitting, and long-term oversight. Expert guidance, full transparency.",
 };
 
 const steps = [
@@ -21,7 +21,7 @@ const steps = [
   {
     num: "03",
     title: "You Stay in Control",
-    body: "Your leadership makes the decisions. We make sure they're informed ones. Revenue flows to you monthly, with full transparency.",
+    body: "Your organization makes the decisions. We make sure they're informed ones. Revenue flows to you monthly, with full transparency.",
   },
 ];
 
@@ -53,7 +53,7 @@ const stats = [
 const questions = [
   {
     q: "Do we have to pay anything upfront?",
-    a: "It depends on your goals and what's available. Some programs are fully funded by the operator. Others involve institution financing that builds equity in the asset. We'll lay out your options honestly and help you choose what fits.",
+    a: "It depends on your goals and what's available. Some programs are fully funded by the operator. Others involve owner financing that builds equity in the asset. We'll lay out your options honestly and help you choose what fits.",
   },
   {
     q: "What if something goes wrong mid-program?",
@@ -65,7 +65,7 @@ const questions = [
   },
 ];
 
-export default function OnePager() {
+export default function OnePagerGeneral() {
   return (
     <div className="min-h-screen bg-covenant-light font-sans print:bg-white">
       <style>{`
@@ -101,15 +101,15 @@ export default function OnePager() {
           </svg>
 
           <p className="font-sans text-xs tracking-widest uppercase text-covenant-green font-semibold mb-3 print:mb-1">
-            Expert EV Program Guidance for Faith Institutions
+            Expert EV Program Guidance for Property Owners
           </p>
           <h1 className="font-serif font-bold text-5xl print:text-2xl text-covenant-blue leading-tight print:leading-snug mb-3 print:mb-2 max-w-2xl">
-            EV charging on your campus is more complicated than it looks.
+            EV charging on your property is more complicated than it looks.
           </h1>
           <p className="font-sans text-base print:text-sm text-covenant-dark/75 leading-relaxed print:leading-snug max-w-xl">
-            Covenant Charge guides faith institutions through every stage of an EV charging
+            Covenant Charge guides property owners through every stage of an EV charging
             program — from site evaluation and operator selection to regulatory approvals
-            and long-term oversight. You stay focused on your mission. We handle the complexity.
+            and long-term oversight. You stay focused on your operations. We handle the complexity.
           </p>
         </section>
 
@@ -121,7 +121,7 @@ export default function OnePager() {
             </h2>
             <p className="font-sans text-sm text-covenant-dark leading-relaxed print:leading-snug">
               An EV charging program involves utility interconnection, permitting, operator
-              contracts, equipment decisions, and ongoing compliance. Most institutions have
+              contracts, equipment decisions, and ongoing compliance. Most property owners have
               one shot to get it right and no experienced guide in their corner. The wrong
               agreement can lock a site in for 15 years on unfavorable terms.
             </p>

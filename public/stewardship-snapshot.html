@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stewardship Snapshot — Covenant Charge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:  #1B4F72;
+  --green: #27AE60;
+  --gold:  #D4AC0D;
+  --cream: #F9F3DC;
+  --light: #F7F9FC;
+  --dark:  #1A202C;
+  --muted: #64748B;
+  --navy:  #0F2D45;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--dark);
+  background: #d1d5db;
+  padding: 0.5in;
+}
+
+.page {
+  background: white;
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto;
+  padding: 0.75in;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.15);
+}
+
+/* ── Typography ─────────────────────────────── */
+h1, h2, h3 { font-family: 'Lora', serif; color: var(--blue); }
+
+h2 {
+  font-size: 17px;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 6px;
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+h3 { font-size: 14px; margin-bottom: 8px; }
+
+p { margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+/* ── Section wrapper ────────────────────────── */
+.section { margin-bottom: 0; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+.section-header h2 { flex: 1; margin-top: 36px; }
+
+/* ── Editable fields ────────────────────────── */
+[contenteditable] {
+  outline: none;
+  cursor: text;
+}
+
+.field {
+  display: inline-block;
+  min-width: 80px;
+  background: #eef2f7;
+  border: 1px dashed #94a3b8;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: inherit;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+.field:focus { background: #eff6ff; border-color: var(--blue); }
+.field:empty::before { content: attr(data-ph); color: #94a3b8; font-style: italic; }
+
+.field-block {
+  display: block;
+  width: 100%;
+  background: #eef2f7;
+  border: 1px dashed #94a3b8;
+  border-radius: 4px;
+  padding: 7px 10px;
+  min-height: 52px;
+  font-size: inherit;
+  font-family: inherit;
+}
+.field-block:focus { background: #eff6ff; border-color: var(--blue); }
+.field-block:empty::before { content: attr(data-ph); color: #94a3b8; font-style: italic; }
+
+/* ── Tables ─────────────────────────────────── */
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 12px 0; }
+td, th { border: 1px solid #e2e8f0; padding: 7px 11px; vertical-align: top; }
+th {
+  background: var(--blue);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+tr:nth-child(even) td { background: var(--light); }
+td:first-child { font-weight: 600; color: var(--blue); white-space: nowrap; }
+
+/* ── Callout / Note box ─────────────────────── */
+.callout {
+  background: #fefce8;
+  border: 1px solid var(--gold);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 12px 0;
+  font-size: 12.5px;
+}
+.callout strong { color: #92400e; }
+
+/* ── Rating buttons ─────────────────────────── */
+.rating-group { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+
+.rating-btn {
+  padding: 4px 14px;
+  border-radius: 100px;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  background: var(--light);
+  color: var(--muted);
+  transition: all 0.12s;
+}
+.rating-btn:hover { border-color: #94a3b8; }
+
+.rating-btn[data-rating="strong"].active  { background: #dcfce7; border-color: var(--green); color: #166534; }
+.rating-btn[data-rating="conditional"].active { background: #fef9c3; border-color: var(--gold); color: #854d0e; }
+.rating-btn[data-rating="constraint"].active  { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
+
+.rating-label { font-size: 11.5px; font-weight: 700; margin-bottom: 6px; color: var(--muted); }
+
+/* ── Suitability blocks ─────────────────────── */
+.suitability-block {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.key-factor-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 12.5px;
+}
+.key-factor-label { font-weight: 700; white-space: nowrap; color: var(--blue); }
+
+/* ── Equipment section ──────────────────────── */
+.equip-config {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  position: relative;
+}
+.equip-config-title {
+  font-weight: 600;
+  font-size: 12.5px;
+  color: var(--blue);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.evse-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.evse-table th {
+  background: #f1f5f9;
+  color: var(--muted);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 8px;
+  text-align: left;
+  border: 1px solid #e2e8f0;
+  font-weight: 600;
+}
+.evse-table td {
+  border: 1px solid #e2e8f0;
+  padding: 5px 6px;
+  vertical-align: middle;
+  font-weight: normal;
+  color: var(--dark);
+  white-space: normal;
+}
+.evse-table tr:nth-child(even) td { background: var(--light); }
+.evse-table td:first-child { white-space: normal; font-weight: normal; color: var(--dark); }
+.evse-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--dark);
+  outline: none;
+  padding: 1px 0;
+}
+.evse-input:focus { background: #eff6ff; border-radius: 2px; padding: 1px 3px; }
+.evse-input::placeholder { color: #cbd5e1; }
+
+/* ── Key Considerations ─────────────────────── */
+.consideration-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  background: var(--light);
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+}
+.consideration-content { flex: 1; }
+.consideration-label-input {
+  font-weight: 700;
+  font-size: 13px;
+  display: block;
+  margin-bottom: 4px;
+}
+.consideration-desc {
+  font-size: 12.5px;
+  display: block;
+  min-height: 36px;
+}
+
+/* ── Overall suitability / Path forward ─────── */
+.overall-group { display: flex; gap: 10px; margin: 14px 0; flex-wrap: wrap; }
+
+.overall-btn {
+  padding: 7px 20px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: white;
+  color: var(--muted);
+  transition: all 0.12s;
+}
+.overall-btn:hover { border-color: #94a3b8; }
+.overall-btn[data-suit="strong"].active      { background: #dcfce7; border-color: var(--green); color: #166534; }
+.overall-btn[data-suit="conditional"].active { background: #fef9c3; border-color: var(--gold);  color: #854d0e; }
+.overall-btn[data-suit="not"].active         { background: #fee2e2; border-color: #ef4444;      color: #991b1b; }
+
+.path-block {
+  border-left: 4px solid var(--green);
+  padding: 14px 18px;
+  background: var(--light);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 14px;
+}
+.path-block.not-rec { border-left-color: #ef4444; }
+.path-block ol { margin: 12px 0 0 18px; }
+.path-block ol li { margin-bottom: 6px; font-size: 13px; }
+
+/* ── Path forward steps ─────────────────────── */
+.path-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.path-step-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  margin-top: 1px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.path-step-title { font-weight: 700; font-size: 13px; margin-bottom: 2px; }
+.path-step-desc { font-size: 12.5px; margin-bottom: 0; }
+
+/* ── Image upload zone ──────────────────────── */
+.upload-zone {
+  border: 2px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 28px;
+  text-align: center;
+  background: var(--light);
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 12px;
+}
+.upload-zone:hover { border-color: var(--blue); background: #eff6ff; }
+.upload-zone input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+.upload-prompt { color: var(--muted); font-size: 13px; pointer-events: none; }
+.upload-prompt span { display: block; font-size: 24px; margin-bottom: 6px; }
+
+#site-map-img {
+  display: none;
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+}
+
+/* ── Buttons / controls ─────────────────────── */
+.btn {
+  padding: 4px 12px;
+  border-radius: 5px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  font-size: 11.5px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  background: white;
+  color: var(--muted);
+  transition: all 0.12s;
+}
+.btn:hover { background: var(--light); border-color: #94a3b8; }
+.btn-danger { color: #dc2626; border-color: #fca5a5; }
+.btn-danger:hover { background: #fee2e2; }
+.btn-primary { background: var(--blue); color: white; border-color: var(--blue); }
+.btn-primary:hover { background: #164060; }
+.btn-add { border-style: dashed; color: var(--blue); border-color: var(--blue); }
+.btn-add:hover { background: #eff6ff; }
+
+.controls-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+.controls-right { margin-left: auto; }
+
+/* ── Hide-from-print toggle ─────────────────── */
+.hide-toggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.hide-toggle input { cursor: pointer; accent-color: var(--blue); }
+
+/* ── Acreage dual input ─────────────────────── */
+.acreage-pair { display: flex; align-items: center; gap: 8px; }
+.acreage-pair .evse-input { width: 80px; }
+.acreage-pair .sep { color: var(--muted); font-size: 12px; }
+
+/* ── Cover ──────────────────────────────────── */
+.cover { margin-bottom: 0; }
+
+.cover-topbar {
+  background: var(--blue);
+  margin: -0.75in -0.75in 0;
+  padding: 0 0.75in;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.cover-topbar-watermark {
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+}
+.cover-logo {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  z-index: 1;
+}
+.cover-logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 44px;
+}
+.cover-logo-wordmark .wm-covenant {
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.cover-logo-wordmark .wm-charge {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--green);
+  letter-spacing: 0.2em;
+  line-height: 1;
+}
+
+/* Body: white area with ghosted bolt behind title */
+.cover-body {
+  padding-top: 56px;
+  position: relative;
+}
+.cover-body-watermark {
+  position: absolute;
+  top: 20px;
+  right: -20px;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+}
+
+.cover-title { margin-bottom: 20px; }
+.cover-title-main {
+  display: block;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 56px;
+  color: var(--blue);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.cover-title-sub {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  color: var(--green);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.cover-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.cover-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  background: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  font-size: 10.5px;
+  color: #78650a;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.cover-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--green) 0%, #a8e6c1 100%);
+  margin-bottom: 28px;
+  border-radius: 2px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0;
+}
+.cover-meta-item {
+  padding: 16px 0;
+  border-bottom: 1px solid #e8ecf0;
+}
+.cover-meta-item:nth-child(3),
+.cover-meta-item:nth-child(4) { border-bottom: none; padding-bottom: 0; }
+.cover-meta-item:nth-child(odd) { padding-right: 48px; }
+.cover-meta-label {
+  display: block;
+  font-size: 9.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.cover-meta-value {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--dark);
+  line-height: 1.35;
+}
+
+/* ── Print bar ──────────────────────────────── */
+.print-bar {
+  position: sticky;
+  top: 0;
+  background: var(--navy);
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  margin: -0.5in -0.5in 0.5in;
+  z-index: 100;
+}
+.print-bar-title { font-weight: 600; letter-spacing: 0.03em; }
+.print-bar-hint { color: #94a3b8; font-size: 11px; }
+
+/* ── About / Disclaimer ─────────────────────── */
+.static-section { margin-bottom: 0; }
+.about-text { font-size: 13px; line-height: 1.7; }
+.disclaimer-text { font-size: 11.5px; color: var(--muted); line-height: 1.6; font-style: italic; }
+.disclaimer-footer { margin-top: 10px; font-size: 11px; color: var(--muted); text-align: center; }
+
+/* ── Hidden section ─────────────────────────── */
+.section-hidden-preview { opacity: 0.35; pointer-events: none; }
+
+/* ══════════════════════════════════════════════
+   PRINT STYLES
+═══════════════════════════════════════════════ */
+@media print {
+  @page {
+    size: letter;
+    margin: 0.75in;
+    @bottom-left  { content: "Covenant Charge · covenantcharge.com"; font-size: 8pt; color: #64748B; font-family: 'Inter', sans-serif; }
+    @bottom-right { content: "Page " counter(page); font-size: 8pt; color: #64748B; font-family: 'Inter', sans-serif; }
+  }
+
+  body { background: white; padding: 0; }
+
+  .page { box-shadow: none; padding: 0; width: 100%; min-height: auto; }
+
+  .print-bar { display: none; }
+
+  .no-print { display: none !important; }
+
+  h2 { break-after: avoid; }
+  h3 { break-after: avoid; }
+
+  .suitability-block { break-inside: avoid; }
+  .consideration-item { break-inside: avoid; }
+  .equip-config { break-inside: avoid; }
+  .path-block { break-inside: avoid; }
+  .cover { break-after: page; }
+  .cover-topbar { margin: 0; }
+
+  [contenteditable] {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  [contenteditable]:empty::before { content: none; }
+
+  .field { display: inline; }
+  .field-block { min-height: auto; }
+
+  /* Rating: hide inactive buttons */
+  .rating-btn:not(.active) { display: none; }
+  .overall-btn:not(.active) { display: none; }
+
+  /* Equipment: hide rows marked hidden-from-customer */
+  .evse-row-hidden { display: none !important; }
+
+  /* Section hidden: hide entirely */
+  .section-hidden-preview { display: none !important; }
+
+  /* Upload zone */
+  .upload-zone { border: 1px solid #e2e8f0; padding: 4px; background: white; }
+  .upload-prompt { display: none; }
+  #site-map-img { display: block !important; max-width: 100%; }
+
+  /* Path forward: hide mismatched block (JS sets .path-hidden) */
+  .path-hidden { display: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Print bar ──────────────────────────── -->
+<div class="print-bar no-print">
+  <span class="print-bar-title">Stewardship Snapshot Editor</span>
+  <span class="print-bar-hint">Fill in all fields, then</span>
+  <button class="btn btn-primary" onclick="window.print()">Print to PDF</button>
+</div>
+
+<div class="page">
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. COVER HEADER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<header class="cover section">
+
+  <!-- ① Blue top bar with watermark arc -->
+  <div class="cover-topbar">
+    <!-- Decorative oversize CC mark, right side -->
+    <svg class="cover-topbar-watermark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 32 8 A 17 17 0 1 0 32 32" stroke="white" stroke-opacity="0.14" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 22 9 L 15 22 L 20 22 L 16 33 L 27 18 L 22 18 Z" fill="#27AE60" fill-opacity="0.5"/>
+    </svg>
+    <!-- Logo -->
+    <div class="cover-logo">
+      <svg width="44" height="44" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M 32 8 A 17 17 0 1 0 32 32" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 22 9 L 15 22 L 20 22 L 16 33 L 27 18 L 22 18 Z" fill="#27AE60"/>
+      </svg>
+      <div class="cover-logo-wordmark">
+        <span class="wm-covenant">Covenant</span>
+        <span class="wm-charge">CHARGE</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② White body with ghosted bolt watermark -->
+  <div class="cover-body">
+    <!-- Ghosted bolt behind title -->
+    <svg class="cover-body-watermark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 22 9 L 15 22 L 20 22 L 16 33 L 27 18 L 22 18 Z" fill="var(--blue)" fill-opacity="0.04"/>
+    </svg>
+
+    <h1 class="cover-title">
+      <span class="cover-title-main">Stewardship</span>
+      <span class="cover-title-sub">Snapshot</span>
+    </h1>
+    <p class="cover-subtitle">A Preliminary Site Assessment from Covenant Charge</p>
+    <div class="cover-badge">Preliminary &middot; Confidential &middot; Non-Binding</div>
+    <div class="cover-accent"></div>
+
+    <!-- ③ Metadata row -->
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Institution</span>
+        <span class="cover-meta-value">
+          <span class="field" contenteditable="true" id="inst-name" data-ph="Institution Name"></span>
+        </span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Date Prepared</span>
+        <span class="cover-meta-value">
+          <span class="field" contenteditable="true" id="date-prepared" data-ph="YYYY-MM-DD"></span>
+        </span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Prepared By</span>
+        <span class="cover-meta-value">Covenant Charge</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">CC Contact</span>
+        <span class="cover-meta-value">
+          <span class="field" contenteditable="true" data-ph="name@covenantcharge.com"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  2. A NOTE FROM COVENANT CHARGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>A Note from Covenant Charge</h2>
+  <p>
+    Thank you for taking the time to share information about
+    <strong class="inst-name-sync">Institution Name</strong>.
+    This Stewardship Snapshot is our way of giving you an honest, no-pressure preliminary picture of what EV fast charging could — or could not — look like at your property.
+  </p>
+  <p>
+    This document is free, non-binding, and carries no obligation of any kind. Our job is to give you clear, accurate information so your leadership can make a well-informed decision — and "no" is a perfectly acceptable outcome. We work only with institutions that are the right fit.
+  </p>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  3. SITE PROFILE SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>Site Profile Summary</h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:10px;font-style:italic;">Drawn directly from the completed intake questionnaire.</p>
+  <table>
+    <thead><tr><th>Field</th><th>Detail</th></tr></thead>
+    <tbody>
+      <tr><td>Institution Name</td><td><span class="inst-name-sync">Institution Name</span></td></tr>
+      <tr><td>Institution Type</td><td><span class="field" contenteditable="true" data-ph="e.g., Church, School, Ministry"></span></td></tr>
+      <tr><td>Weekly Attendance</td><td><span class="field" contenteditable="true" data-ph="e.g., 400 avg."></span></td></tr>
+      <tr><td>Property Address</td><td><span class="field" contenteditable="true" data-ph="Full street address"></span></td></tr>
+      <tr><td>Property Ownership</td><td><span class="field" contenteditable="true" data-ph="e.g., Owned fee-simple / Leased"></span></td></tr>
+      <tr>
+        <td>Approximate Acreage</td>
+        <td>
+          <div class="acreage-pair">
+            <input class="evse-input" id="acres-input" type="number" min="0" step="0.01" placeholder="0.00"> acres
+            <span class="sep">=</span>
+            <input class="evse-input" id="sqft-input" type="number" min="0" step="1" placeholder="0"> sq ft
+          </div>
+        </td>
+      </tr>
+      <tr><td>Total Paved Parking Spaces</td><td><span class="field" contenteditable="true" data-ph="e.g., 120 spaces"></span></td></tr>
+      <tr><td>Lot Condition</td><td><span class="field" contenteditable="true" data-ph="e.g., Good / Fair / Poor"></span></td></tr>
+      <tr><td>Lot Visibility</td><td><span class="field" contenteditable="true" data-ph="e.g., High street visibility from Main St."></span></td></tr>
+      <tr><td>Electric Utility Provider</td><td><span class="field" contenteditable="true" data-ph="e.g., PG&E"></span></td></tr>
+      <tr><td>Existing EV Chargers</td><td><span class="field" contenteditable="true" data-ph="e.g., None / 2 Level 2"></span></td></tr>
+      <tr><td>Decision Authority</td><td><span class="field" contenteditable="true" data-ph="e.g., Elder Board / Executive Pastor"></span></td></tr>
+      <tr><td>Decision Timeline</td><td><span class="field" contenteditable="true" data-ph="e.g., Board meets quarterly"></span></td></tr>
+      <tr><td>Primary Contact</td><td><span class="field" contenteditable="true" data-ph="Name, Title"></span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  4. SITE MAP & EQUIPMENT LOCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>Site Map &amp; Equipment Location Overview</h2>
+
+  <img id="site-map-img" src="" alt="Site map">
+
+  <div class="upload-zone no-print" id="upload-zone">
+    <input type="file" accept="image/*" id="site-map-upload">
+    <div class="upload-prompt">
+      <span>🗺️</span>
+      Click to upload a site photo, aerial, or diagram
+    </div>
+  </div>
+
+  <label style="display:block;font-size:11.5px;font-weight:600;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.05em;">Notes &amp; Equipment Placement</label>
+  <div class="field-block" contenteditable="true" data-ph="Describe proposed charger location, proximity to electrical panel, ADA considerations, etc."></div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  5. SUITABILITY ASSESSMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>Suitability Assessment</h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;font-style:italic;">Each dimension is rated independently based on site conditions.</p>
+
+  <!-- 5a. Traffic & Visibility -->
+  <div class="suitability-block">
+    <h3>1. Traffic &amp; Visibility</h3>
+    <div class="rating-group no-print" data-group="traffic">
+      <button class="rating-btn" data-rating="strong">✅ Strong</button>
+      <button class="rating-btn" data-rating="conditional">⚠️ Conditional</button>
+      <button class="rating-btn" data-rating="constraint">❌ Significant Constraint</button>
+    </div>
+    <div class="rating-label" id="rating-display-traffic">&nbsp;</div>
+    <div class="field-block" contenteditable="true" data-ph="Describe site location, traffic counts, visibility from street, nearby EV-owning demographics or retail anchors."></div>
+    <div class="key-factor-row">
+      <span class="key-factor-label">Key Factor:</span>
+      <span class="field" style="flex:1" contenteditable="true" data-ph="Single most important traffic/visibility consideration."></span>
+    </div>
+  </div>
+
+  <!-- 5b. Electrical Readiness -->
+  <div class="suitability-block">
+    <h3>2. Electrical Readiness</h3>
+    <div class="rating-group no-print" data-group="electrical">
+      <button class="rating-btn" data-rating="strong">✅ Strong</button>
+      <button class="rating-btn" data-rating="conditional">⚠️ Conditional</button>
+      <button class="rating-btn" data-rating="constraint">❌ Significant Constraint</button>
+    </div>
+    <div class="rating-label" id="rating-display-electrical">&nbsp;</div>
+    <div class="field-block" contenteditable="true" data-ph="Describe existing electrical infrastructure. Note whether 480V 3-phase is confirmed, unknown, or insufficient. Flag likely utility upgrades."></div>
+    <div class="key-factor-row">
+      <span class="key-factor-label">Key Factor:</span>
+      <span class="field" style="flex:1" contenteditable="true" data-ph="Single most important electrical consideration."></span>
+    </div>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:8px;font-style:italic;">
+      ⚠️ Electrical readiness cannot be confirmed without a licensed engineer's site assessment. This is a preliminary opinion only.
+    </p>
+  </div>
+
+  <!-- 5c. Parking Capacity -->
+  <div class="suitability-block">
+    <h3>3. Parking Capacity &amp; Availability</h3>
+    <div class="rating-group no-print" data-group="parking">
+      <button class="rating-btn" data-rating="strong">✅ Strong</button>
+      <button class="rating-btn" data-rating="conditional">⚠️ Conditional</button>
+      <button class="rating-btn" data-rating="constraint">❌ Significant Constraint</button>
+    </div>
+    <div class="rating-label" id="rating-display-parking">&nbsp;</div>
+    <div class="field-block" contenteditable="true" data-ph="Describe lot size, off-peak availability, shared-use agreements, ADA considerations, and any covenant or easement constraints."></div>
+    <div class="key-factor-row">
+      <span class="key-factor-label">Key Factor:</span>
+      <span class="field" style="flex:1" contenteditable="true" data-ph="Single most important parking consideration."></span>
+    </div>
+  </div>
+
+  <!-- 5d. Governance Readiness -->
+  <div class="suitability-block">
+    <h3>4. Governance Readiness</h3>
+    <div class="rating-group no-print" data-group="governance">
+      <button class="rating-btn" data-rating="strong">✅ Strong</button>
+      <button class="rating-btn" data-rating="conditional">⚠️ Conditional</button>
+      <button class="rating-btn" data-rating="constraint">❌ Significant Constraint</button>
+    </div>
+    <div class="rating-label" id="rating-display-governance">&nbsp;</div>
+    <div class="field-block" contenteditable="true" data-ph="Describe decision-making structure, authority, timeline, member perception concerns, denominational restrictions. Identify likely champion and skeptic."></div>
+    <div class="key-factor-row">
+      <span class="key-factor-label">Key Factor:</span>
+      <span class="field" style="flex:1" contenteditable="true" data-ph="Single most important governance consideration."></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  6. EQUIPMENT OPTIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section" id="sec-equipment">
+  <div class="section-header">
+    <h2>Equipment Options</h2>
+    <label class="hide-toggle no-print" id="equip-hide-toggle">
+      <input type="checkbox" id="equip-hide-cb"> Hide section from customer
+    </label>
+  </div>
+
+  <div id="equip-configs">
+    <!-- Port Config 1 (default) -->
+    <div class="equip-config">
+      <div class="equip-config-title">
+        Port Configuration 1:
+        <input class="evse-input" style="width:60px;font-weight:600;" type="number" min="1" placeholder="0"> DCFC ports
+        <span class="no-print" style="margin-left:auto;">
+          <button class="btn btn-danger remove-config-btn" style="display:none;">Remove</button>
+        </span>
+      </div>
+      <table class="evse-table">
+        <thead>
+          <tr>
+            <th>Brand</th><th>Model</th><th>Ports</th><th>Cap. Cost Lo ($K)</th><th>Cap. Cost Hi ($K)</th><th>Notes</th><th class="no-print">Hide</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="evse-row">
+            <td><input class="evse-input" placeholder="e.g., Tritium"></td>
+            <td><input class="evse-input" placeholder="e.g., RT50-D"></td>
+            <td><input class="evse-input" type="number" min="1" placeholder="2"></td>
+            <td><input class="evse-input" type="number" min="0" placeholder="40"></td>
+            <td><input class="evse-input" type="number" min="0" placeholder="55"></td>
+            <td><input class="evse-input" placeholder="Notes"></td>
+            <td class="no-print" style="text-align:center;">
+              <input type="checkbox" class="evse-hide-cb" title="Hide from customer">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="controls-row no-print">
+        <button class="btn btn-add add-evse-btn">+ Add EVSE Option</button>
+        <span style="font-size:11px;color:var(--muted);">Max 3 options per config</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-row no-print" style="margin-top:4px;">
+    <button class="btn btn-add" id="add-config-btn">+ Add Port Configuration</button>
+    <span style="font-size:11px;color:var(--muted);">Max 3 configurations</span>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  7. EV CHARGING OPPORTUNITY OVERVIEW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>EV Charging Opportunity Overview</h2>
+
+  <div class="callout">
+    <strong>⚠️ Important:</strong> The figures below are illustrative ranges based on industry benchmarks and comparable sites. They are not guarantees, projections, or commitments. Actual results depend on operator selection, utilization rates, pricing, and many factors outside CC's control.
+  </div>
+
+  <p style="margin-top:12px;font-size:13px;">
+    <strong>Estimated Site Configuration:</strong>
+    <span class="field" contenteditable="true" data-ph="X DC Fast Charge ports (Level 3), X Level 2 ports (if applicable)"></span>
+  </p>
+
+  <table>
+    <thead><tr><th>Metric</th><th>Estimated Range</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Annual Gross Charging Revenue (all operators)</td>
+        <td>$<span class="field" contenteditable="true" data-ph="LOW"></span>K – $<span class="field" contenteditable="true" data-ph="HIGH"></span>K</td>
+      </tr>
+      <tr>
+        <td>CC Platform Participation (annual)</td>
+        <td>$<span class="field" contenteditable="true" data-ph="X"></span>K – $<span class="field" contenteditable="true" data-ph="X"></span>K</td>
+      </tr>
+      <tr>
+        <td>Estimated Year 1 Total CC Fee</td>
+        <td>$<span class="field" contenteditable="true" data-ph="X"></span>K (includes origination/coordination)</td>
+      </tr>
+      <tr>
+        <td>Institution Annual Net Opportunity</td>
+        <td><span class="field" contenteditable="true" data-ph="Operator-dependent — CC does not set operator pricing"></span></td>
+      </tr>
+      <tr>
+        <td>Estimated 5-Year CC Revenue to Institution</td>
+        <td>$<span class="field" contenteditable="true" data-ph="X"></span>K – $<span class="field" contenteditable="true" data-ph="X"></span>K (illustrative)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:11.5px;color:var(--muted);margin-top:10px;font-style:italic;">
+    Revenue accrues to the operator-institution agreement. CC earns a platform participation fee from the operator — the institution does not pay CC directly.
+  </p>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  8. KEY CONSIDERATIONS & CONSTRAINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>Key Considerations &amp; Constraints</h2>
+  <p style="font-size:12px;color:var(--muted);margin-bottom:14px;font-style:italic;">Honest factors your leadership should discuss before moving forward. Be specific, not generic.</p>
+
+  <div id="considerations-list">
+    <div class="consideration-item">
+      <div class="consideration-content">
+        <span class="field consideration-label-input" contenteditable="true" data-ph="Constraint label"></span>
+        <span class="field-block consideration-desc" contenteditable="true" data-ph="1-2 sentences explaining the constraint and its implications."></span>
+      </div>
+      <div class="no-print" style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">
+        <button class="btn" onclick="moveConsideration(this,-1)">▲</button>
+        <button class="btn" onclick="moveConsideration(this,1)">▼</button>
+        <button class="btn btn-danger" onclick="removeConsideration(this)">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-row no-print">
+    <button class="btn btn-add" id="add-consideration-btn">+ Add Consideration</button>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  9. RECOMMENDED PATH FORWARD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section">
+  <h2>Recommended Path Forward</h2>
+
+  <p style="font-weight:600;font-size:13px;margin-bottom:6px;">Overall Suitability:</p>
+  <div class="overall-group no-print">
+    <button class="overall-btn" data-suit="strong">✅ Strong Candidate</button>
+    <button class="overall-btn" data-suit="conditional">⚠️ Conditional Candidate</button>
+    <button class="overall-btn" data-suit="not">❌ Not Recommended at This Time</button>
+  </div>
+  <div id="overall-display" style="font-weight:700;font-size:14px;margin-bottom:16px;">&nbsp;</div>
+
+  <!-- Suitable block -->
+  <div class="path-block" id="path-suitable">
+    <p style="margin-bottom:16px;">
+      <strong class="inst-name-sync">Institution Name</strong> appears to be a
+      <span class="field" contenteditable="true" data-ph="strong / conditional"></span>
+      candidate for a Covenant Charge EV fast-charging program. If your leadership decides to move forward, here is what the process looks like:
+    </p>
+
+    <div class="path-step">
+      <div class="path-step-num">1</div>
+      <div>
+        <div class="path-step-title">Program Agreement</div>
+        <p class="path-step-desc">Before any work begins, we establish a formal program agreement between <strong class="inst-name-sync">Institution Name</strong> and Covenant Charge. This document defines our role as your long-term representative, confirms there is no cost to your institution, and protects your decision-making authority throughout the process. Nothing moves forward without your leadership's signature and comfort.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">2</div>
+      <div>
+        <div class="path-step-title">Engineering Pre-Assessment</div>
+        <p class="path-step-desc">Once an agreement is in place, a licensed electrical engineer reviews your existing electrical service to confirm capacity and scope any required upgrades. Covenant Charge coordinates this process on your behalf.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">3</div>
+      <div>
+        <div class="path-step-title">Operator Selection</div>
+        <p class="path-step-desc">Covenant Charge introduces your institution to vetted charging operators aligned with your site profile. We manage that relationship and help you evaluate terms — you make the final decision.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">4</div>
+      <div>
+        <div class="path-step-title">Financing &amp; Contracts</div>
+        <p class="path-step-desc">With an operator selected, we work through equipment financing and purchase contracts. Covenant Charge stays involved to ensure your interests are protected.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">5</div>
+      <div>
+        <div class="path-step-title">Site Design &amp; Engineering</div>
+        <p class="path-step-desc">A licensed engineer designs the site layout — charger placement, electrical routing, ADA compliance, and conduit pathways. Covenant Charge coordinates this process. The design is submitted to your local jurisdiction and utility for permitting approval before any construction begins.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">6</div>
+      <div>
+        <div class="path-step-title">Construction &amp; Installation</div>
+        <p class="path-step-desc">A licensed electrical contractor builds out the site per the approved design. Covenant Charge provides oversight throughout construction and manages the relationship with the operator and contractor on your behalf.</p>
+      </div>
+    </div>
+
+    <div class="path-step">
+      <div class="path-step-num">7</div>
+      <div>
+        <div class="path-step-title">Commissioning &amp; Launch</div>
+        <p class="path-step-desc">Once installed, the equipment is tested, activated, and connected to the operator's network. Your site goes live. Covenant Charge remains your long-term representative from this point forward — monitoring performance, managing operator relationships, and keeping your leadership informed.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Not recommended block -->
+  <div class="path-block not-rec path-hidden" id="path-not-rec">
+    <p>
+      At this time, <strong class="inst-name-sync">Institution Name</strong> faces
+      <span class="field" contenteditable="true" data-ph="primary constraint"></span>
+      that makes a fast-charging program difficult to execute responsibly. This is not a permanent conclusion. If
+      <span class="field" contenteditable="true" data-ph="condition that would change this"></span>,
+      we would welcome a future conversation. We will not pursue this site further unless you reach out to us.
+    </p>
+  </div>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  10. ABOUT COVENANT CHARGE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section static-section">
+  <h2>About Covenant Charge</h2>
+  <p class="about-text">
+    Covenant Charge is a faith-forward EV charging platform that helps faith-based institutions responsibly unlock long-term, sustainable revenue from underutilized parking assets. We serve as a long-term program representative — not a one-time contractor — providing stewardship, oversight, and continuity as the EV industry evolves. We do not own equipment, take on operational risk, or charge institutions for our services.
+  </p>
+</section>
+
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  11. DISCLAIMER (always prints)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section class="section static-section" style="border-top:1px solid #e2e8f0;padding-top:20px;margin-top:20px;">
+  <p class="disclaimer-text">
+    This Stewardship Snapshot is a free, preliminary, non-binding document prepared by Covenant Charge LLC for informational purposes only. It does not constitute a legal agreement, financial projection, engineering assessment, or commitment of any kind. All revenue figures are illustrative estimates based on industry benchmarks and are subject to change. Covenant Charge makes no representations or warranties regarding site suitability, revenue potential, or operator performance. Institutions should consult with their own legal, financial, and technical advisors before making any infrastructure decisions.
+  </p>
+  <p class="disclaimer-footer">
+    Prepared by Covenant Charge LLC &middot; covenantcharge.com
+  </p>
+</section>
+
+</div><!-- /.page -->
+
+<script>
+/* ── Paste: strip HTML ───────────────────────── */
+document.addEventListener('paste', function(e) {
+  if (!e.target.isContentEditable) return;
+  e.preventDefault();
+  const text = (e.clipboardData || window.clipboardData).getData('text/plain');
+  document.execCommand('insertText', false, text);
+});
+
+/* Prevent newlines in single-line .field elements */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' && e.target.classList.contains('field') && e.target.isContentEditable) {
+    e.preventDefault();
+  }
+});
+
+/* ── Institution name sync ───────────────────── */
+const instInput = document.getElementById('inst-name');
+function syncInstName() {
+  const name = instInput.textContent.trim();
+  const display = name || 'Institution Name';
+  document.querySelectorAll('.inst-name-sync').forEach(el => { el.textContent = display; });
+}
+instInput.addEventListener('input', syncInstName);
+
+/* ── Rating buttons ──────────────────────────── */
+const RATING_LABELS = {
+  traffic:    { el: document.getElementById('rating-display-traffic')    },
+  electrical: { el: document.getElementById('rating-display-electrical') },
+  parking:    { el: document.getElementById('rating-display-parking')    },
+  governance: { el: document.getElementById('rating-display-governance') },
+};
+
+const RATING_TEXT = {
+  strong:      '✅ Strong',
+  conditional: '⚠️ Conditional',
+  constraint:  '❌ Significant Constraint',
+};
+
+document.querySelectorAll('.rating-group').forEach(group => {
+  const name = group.dataset.group;
+  group.querySelectorAll('.rating-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      group.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (RATING_LABELS[name]) {
+        RATING_LABELS[name].el.textContent = 'Rating: ' + RATING_TEXT[btn.dataset.rating];
+      }
+    });
+  });
+});
+
+/* ── Overall suitability + path forward ─────── */
+const overallDisplay = document.getElementById('overall-display');
+const pathSuitable   = document.getElementById('path-suitable');
+const pathNotRec     = document.getElementById('path-not-rec');
+
+const SUIT_TEXT = {
+  strong:      '✅ Strong Candidate',
+  conditional: '⚠️ Conditional Candidate',
+  not:         '❌ Not Recommended at This Time',
+};
+
+document.querySelectorAll('.overall-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.overall-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    overallDisplay.textContent = SUIT_TEXT[btn.dataset.suit];
+
+    if (btn.dataset.suit === 'not') {
+      pathSuitable.classList.add('path-hidden');
+      pathNotRec.classList.remove('path-hidden');
+    } else {
+      pathSuitable.classList.remove('path-hidden');
+      pathNotRec.classList.add('path-hidden');
+    }
+  });
+});
+
+/* ── Image upload ────────────────────────────── */
+const uploadInput = document.getElementById('site-map-upload');
+const uploadZone  = document.getElementById('upload-zone');
+const siteMapImg  = document.getElementById('site-map-img');
+
+uploadInput.addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    siteMapImg.src = e.target.result;
+    siteMapImg.style.display = 'block';
+    uploadZone.style.display = 'none';
+  };
+  reader.readAsDataURL(file);
+});
+
+/* ── Acreage conversion ──────────────────────── */
+const acresInput = document.getElementById('acres-input');
+const sqftInput  = document.getElementById('sqft-input');
+const SQFT_PER_ACRE = 43560;
+
+acresInput.addEventListener('input', function() {
+  const val = parseFloat(this.value);
+  sqftInput.value = isNaN(val) ? '' : Math.round(val * SQFT_PER_ACRE);
+});
+sqftInput.addEventListener('input', function() {
+  const val = parseFloat(this.value);
+  acresInput.value = isNaN(val) ? '' : (val / SQFT_PER_ACRE).toFixed(3);
+});
+
+/* ── Equipment options ───────────────────────── */
+const equipConfigs = document.getElementById('equip-configs');
+const addConfigBtn = document.getElementById('add-config-btn');
+let configCount = 1;
+
+function newEvseRow() {
+  const tr = document.createElement('tr');
+  tr.className = 'evse-row';
+  tr.innerHTML = `
+    <td><input class="evse-input" placeholder="e.g., Tritium"></td>
+    <td><input class="evse-input" placeholder="e.g., RT50-D"></td>
+    <td><input class="evse-input" type="number" min="1" placeholder="2"></td>
+    <td><input class="evse-input" type="number" min="0" placeholder="40"></td>
+    <td><input class="evse-input" type="number" min="0" placeholder="55"></td>
+    <td><input class="evse-input" placeholder="Notes"></td>
+    <td class="no-print" style="text-align:center;">
+      <input type="checkbox" class="evse-hide-cb" title="Hide from customer">
+      <button class="btn btn-danger" style="margin-left:4px;padding:2px 7px;" onclick="removeEvseRow(this)">✕</button>
+    </td>`;
+  return tr;
+}
+
+function newConfig(num) {
+  const div = document.createElement('div');
+  div.className = 'equip-config';
+  div.innerHTML = `
+    <div class="equip-config-title">
+      Port Configuration ${num}:
+      <input class="evse-input" style="width:60px;font-weight:600;" type="number" min="1" placeholder="0"> DCFC ports
+      <span class="no-print" style="margin-left:auto;">
+        <button class="btn btn-danger remove-config-btn">Remove</button>
+      </span>
+    </div>
+    <table class="evse-table">
+      <thead>
+        <tr>
+          <th>Brand</th><th>Model</th><th>Ports</th><th>Cap. Cost Lo ($K)</th><th>Cap. Cost Hi ($K)</th><th>Notes</th><th class="no-print">Hide</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <div class="controls-row no-print">
+      <button class="btn btn-add add-evse-btn">+ Add EVSE Option</button>
+      <span style="font-size:11px;color:var(--muted);">Max 3 options per config</span>
+    </div>`;
+  div.querySelector('tbody').appendChild(newEvseRow());
+  return div;
+}
+
+addConfigBtn.addEventListener('click', function() {
+  if (configCount >= 3) return;
+  configCount++;
+  const config = newConfig(configCount);
+  equipConfigs.appendChild(config);
+  updateConfigRemoveButtons();
+  updateAddConfigBtn();
+});
+
+equipConfigs.addEventListener('click', function(e) {
+  /* Add EVSE row */
+  if (e.target.classList.contains('add-evse-btn')) {
+    const config = e.target.closest('.equip-config');
+    const tbody = config.querySelector('tbody');
+    if (tbody.querySelectorAll('tr').length >= 3) return;
+    tbody.appendChild(newEvseRow());
+  }
+  /* Remove config */
+  if (e.target.classList.contains('remove-config-btn')) {
+    e.target.closest('.equip-config').remove();
+    configCount--;
+    renumberConfigs();
+    updateConfigRemoveButtons();
+    updateAddConfigBtn();
+  }
+});
+
+/* Hide EVSE row from print */
+equipConfigs.addEventListener('change', function(e) {
+  if (e.target.classList.contains('evse-hide-cb')) {
+    const row = e.target.closest('tr');
+    row.classList.toggle('evse-row-hidden', e.target.checked);
+  }
+});
+
+function removeEvseRow(btn) {
+  const tbody = btn.closest('tbody');
+  if (tbody.querySelectorAll('tr').length <= 1) return;
+  btn.closest('tr').remove();
+}
+window.removeEvseRow = removeEvseRow;
+
+function renumberConfigs() {
+  equipConfigs.querySelectorAll('.equip-config').forEach((c, i) => {
+    const title = c.querySelector('.equip-config-title');
+    const first = title.firstChild;
+    if (first && first.nodeType === 3) first.textContent = `Port Configuration ${i+1}: `;
+  });
+}
+
+function updateConfigRemoveButtons() {
+  const configs = equipConfigs.querySelectorAll('.equip-config');
+  configs.forEach(c => {
+    const btn = c.querySelector('.remove-config-btn');
+    if (btn) btn.style.display = configs.length > 1 ? '' : 'none';
+  });
+}
+
+function updateAddConfigBtn() {
+  addConfigBtn.style.display = configCount >= 3 ? 'none' : '';
+}
+
+/* ── Equipment section hide ──────────────────── */
+const equipHideCb    = document.getElementById('equip-hide-cb');
+const secEquipment   = document.getElementById('sec-equipment');
+
+equipHideCb.addEventListener('change', function() {
+  /* Content below h2 */
+  secEquipment.querySelectorAll(':scope > *:not(.section-header)').forEach(el => {
+    el.classList.toggle('section-hidden-preview', this.checked);
+  });
+});
+
+/* ── Key Considerations ──────────────────────── */
+const considerationsList = document.getElementById('considerations-list');
+const addConsiderationBtn = document.getElementById('add-consideration-btn');
+
+function newConsiderationItem() {
+  const div = document.createElement('div');
+  div.className = 'consideration-item';
+  div.innerHTML = `
+    <div class="consideration-content">
+      <span class="field consideration-label-input" contenteditable="true" data-ph="Constraint label"></span>
+      <span class="field-block consideration-desc" contenteditable="true" data-ph="1-2 sentences explaining the constraint and its implications."></span>
+    </div>
+    <div class="no-print" style="display:flex;flex-direction:column;gap:4px;flex-shrink:0;">
+      <button class="btn" onclick="moveConsideration(this,-1)">▲</button>
+      <button class="btn" onclick="moveConsideration(this,1)">▼</button>
+      <button class="btn btn-danger" onclick="removeConsideration(this)">✕</button>
+    </div>`;
+  return div;
+}
+
+addConsiderationBtn.addEventListener('click', function() {
+  considerationsList.appendChild(newConsiderationItem());
+});
+
+function moveConsideration(btn, dir) {
+  const item = btn.closest('.consideration-item');
+  const items = [...considerationsList.querySelectorAll('.consideration-item')];
+  const idx = items.indexOf(item);
+  const target = items[idx + dir];
+  if (!target) return;
+  if (dir === -1) considerationsList.insertBefore(item, target);
+  else target.after(item);
+}
+window.moveConsideration = moveConsideration;
+
+function removeConsideration(btn) {
+  const items = considerationsList.querySelectorAll('.consideration-item');
+  if (items.length <= 1) return;
+  btn.closest('.consideration-item').remove();
+}
+window.removeConsideration = removeConsideration;
+
+/* ── Init ────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function() {
+  updateConfigRemoveButtons();
+  syncInstName();
+
+  /* Set today's date as default */
+  const dp = document.getElementById('date-prepared');
+  if (!dp.textContent.trim()) {
+    dp.textContent = new Date().toISOString().slice(0, 10);
+  }
+});
+</script>
+</body>
+</html>

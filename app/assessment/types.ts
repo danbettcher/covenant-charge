@@ -21,6 +21,7 @@ export type AssessmentData = {
   sec_3_5: { value: string; text: string };
   sec_3_6: string; sec_3_7: string; sec_3_8: string; sec_3_9: string;
   sec_3_10: string[]; sec_3_11: string;
+  sec_3_12: { intent: string; stations: string; spaces: string };
   // Section 4
   sec_4_1: string; sec_4_2: string; sec_4_3: string;
   sec_4_4: UploadMeta | null;
@@ -71,6 +72,7 @@ export const DEFAULT_DATA: AssessmentData = {
   sec_3_1: '', sec_3_2: '', sec_3_3: [], sec_3_4: '',
   sec_3_5: { value: '', text: '' },
   sec_3_6: '', sec_3_7: '', sec_3_8: '', sec_3_9: '', sec_3_10: [], sec_3_11: '',
+  sec_3_12: { intent: '', stations: '', spaces: '' },
   sec_4_1: '', sec_4_2: '', sec_4_3: '', sec_4_4: null,
   sec_4_5: '', sec_4_6: '', sec_4_7: '', sec_4_8: '', sec_4_9: '', sec_4_10: '',
   sec_5_1: '', sec_5_2: { types: [], age: '' }, sec_5_3: '',

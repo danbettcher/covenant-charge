@@ -51,6 +51,7 @@ create table site_assessments (
   sec_3_9  text,    -- surface condition
   sec_3_10 jsonb,   -- string[] lot features
   sec_3_11 text,    -- other lot features
+  sec_3_12 jsonb,   -- {intent, stations, spaces} charger quantity intent
 
   -- Section 4: Electrical Infrastructure
   sec_4_1  text,    -- utility provider
@@ -138,6 +139,12 @@ $$;
 create trigger site_assessments_updated_at
   before update on site_assessments
   for each row execute function update_updated_at();
+
+-- ============================================================
+-- Migration: add sec_3_12 (run once in Supabase SQL Editor)
+-- ============================================================
+alter table site_assessments
+  add column if not exists sec_3_12 jsonb;
 
 -- ============================================================
 -- Storage bucket setup (run in Supabase Dashboard > Storage)
